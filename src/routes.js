@@ -6,7 +6,7 @@ import {
     USER_SETTINGS_ROUTE,
     DAILY_ROUTE,
     SALARY_LIST_ROUTE,
-    EXPENSES_LIST_ROUTE, ADDITIONAL_INCOME_LIST_ROUTE
+    EXPENSES_LIST_ROUTE, ADDITIONAL_INCOME_LIST_ROUTE, WELCOME_ROUTE
 } from "./utils/consts"
 import MainPage from "./pages/MainPage";
 import AdminPage from "./pages/AdminPage";
@@ -16,6 +16,7 @@ import SalaryPage from "./pages/SalaryPage";
 import ExpensesPage from "./pages/ExpensesPage";
 import AdditionalIncomePage from "./pages/AdditionalIncomePage";
 import AuthPage from "./pages/AuthPage";
+import WelcomePage from "./pages/WelcomePage";
 
 export const authRouts = [
     {
@@ -59,5 +60,9 @@ export const publicRouts = [
     {
         path: REGISTRATION_ROUTE,
         Component: AuthPage
+    },
+    {
+        path: WELCOME_ROUTE,
+        Component: WelcomePage
     },
 ]
