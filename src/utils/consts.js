@@ -1,0 +1,10 @@
+export const ADMIN_ROUTE = '/admin'
+export const LOGIN_ROUTE = '/login'
+export const REGISTRATION_ROUTE = '/registration'
+
+export const HOME_ROUTE = '/financial-accounting'
+export const USER_SETTINGS_ROUTE = HOME_ROUTE + '/user-settings'
+export const DAILY_ROUTE = HOME_ROUTE + '/daily'
+export const SALARY_LIST_ROUTE = HOME_ROUTE + '/salary-list'
+export const EXPENSES_LIST_ROUTE = HOME_ROUTE + '/expenses-list'
+export const ADDITIONAL_INCOME_LIST_ROUTE = HOME_ROUTE + '/additional-income-list'
