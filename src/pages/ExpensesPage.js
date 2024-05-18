@@ -1,10 +1,29 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {Context} from "../index";
+import ListElement from "../components/ListElement";
+import {ListGroup} from "react-bootstrap";
+
 
 const ExpensesPage = () => {
+    const {expenses} = useContext(Context)
     return (
-        <div>
-            expenses
-        </div>
+        <>
+            <ListGroup>
+                {expenses.expenses.map((sal) =>{
+                    return(
+                        <ListElement
+                            key = {sal.index}
+                            name = {sal.name}
+                            value = {sal.value}
+                            status = {sal.status}
+                            date = {sal.date}
+                        />
+                    )
+                })}
+
+            </ListGroup>
+
+        </>
     );
 };
 
