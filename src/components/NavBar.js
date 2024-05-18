@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import {observer} from 'mobx-react-lite'
 import { useNavigate } from 'react-router-dom';
 import {ADMIN_ROUTE, HOME_ROUTE, LOGIN_ROUTE} from "../utils/consts";
-// import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
