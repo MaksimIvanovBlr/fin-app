@@ -1,54 +1,68 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {NavLink} from "react-router-dom";
 import {ADDITIONAL_INCOME_LIST_ROUTE, EXPENSES_LIST_ROUTE, SALARY_LIST_ROUTE} from "../utils/consts";
+import {ListGroup} from "react-bootstrap";
+import ChangeReserv from "../components/modals/ChangeReserv";
+import Recalculation from "../components/modals/Recalculation";
+import MainUserInfo from "../components/modals/MainUserInfo";
+import {observer} from "mobx-react-lite";
 
 
-const UserSettings = () => {
+
+const UserSettings = observer(() => {
+
+    const [changeReservVisible, setChangeReservVisible] = useState(false)
+    const [mainDataVisible, setMainDataVisible] = useState(false)
+    const [recalculateVisible, setRecalculateVisible] = useState(false)
+
     return (
         <div>
 
-            <ul>
+            <ListGroup>
 
-                <NavLink to={EXPENSES_LIST_ROUTE}
-                >                   <li className='list-acc'>
+                <NavLink to={EXPENSES_LIST_ROUTE}>
+                    <ListGroup.Item>
                     Расходы
-                </li>
+                    </ListGroup.Item>
                 </NavLink>
 
                 <NavLink to={SALARY_LIST_ROUTE}>
-                    <li className='list-acc'>
+                    <ListGroup.Item>
                         Основной доход
-                    </li>
+                    </ListGroup.Item>
                 </NavLink>
 
                 <NavLink to={ADDITIONAL_INCOME_LIST_ROUTE}>
-                    <li className='list-acc'>
+                    <ListGroup.Item>
                         Дополнительный доход
-                    </li>
+                    </ListGroup.Item>
                 </NavLink>
 
 
-                <li className='list-acc'>
+                <ListGroup.Item  onClick={() => setChangeReservVisible(true)}>
                     Изменить резерв
-                </li>
+                </ListGroup.Item>
 
 
 
-                <li className='list-acc'>
+                <ListGroup.Item onClick={() => setMainDataVisible(true)}>
                     Основные данные
-                </li>
+                </ListGroup.Item>
 
 
 
-                <li className='list-acc'>
+                <ListGroup.Item  onClick={() => setRecalculateVisible(true)}>
                     Пересчитать резерв
-                </li>
+                </ListGroup.Item>
 
 
-            </ul>
+            </ListGroup>
+            <ChangeReserv show={changeReservVisible} onHide={() => setChangeReservVisible(false)}/>
+            <Recalculation show={recalculateVisible} onHide={() => setRecalculateVisible(false)}/>
+            <MainUserInfo show={mainDataVisible} onHide={() => setMainDataVisible(false)}/>
         </div>
     );
-};
+});
 
 export default UserSettings;
