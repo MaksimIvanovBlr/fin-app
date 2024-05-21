@@ -12,7 +12,8 @@ const ExpensesPage = () => {
                 {expenses.expenses.map((sal) =>{
                     return(
                         <ListElement
-                            key = {sal.index}
+                            key = {sal.id}
+                            id = {sal.id}
                             name = {sal.name}
                             value = {sal.value}
                             status = {sal.status}

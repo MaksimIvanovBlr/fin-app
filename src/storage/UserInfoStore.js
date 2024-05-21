@@ -34,7 +34,7 @@ export default class UserInfoStore {
 
 
     setBufferMoney(bufferMoney){
-        this._reservValue = bufferMoney
+        this._bufferMoney = bufferMoney
     }
 
     get bufferMoney(){
